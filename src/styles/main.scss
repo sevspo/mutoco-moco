@@ -1,3 +1,11 @@
+@import './variables';
+
 .test {
-	color: $bg-color;
+	color: $color-red;
+}
+
+.container {
+	.test {
+		color: green;
+	}
 }
