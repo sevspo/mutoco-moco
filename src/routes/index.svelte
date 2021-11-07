@@ -51,8 +51,9 @@
 	}
 
 	function updateDaysUntilEvent(e: CustomEvent<any>) {
-		reminderDays =
-			(e.detail.selectedDates[0].getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24);
+		reminderDays = Math.floor(
+			(e.detail.selectedDates[0].getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24)
+		);
 	}
 
 	function increaseReminderDays(): void {
@@ -74,7 +75,6 @@
 			if (date instanceof Date) {
 				// add one day to date
 				date = new Date(date.setDate(date.getDate() - 1));
-				console.log(date);
 			}
 		}
 	}
@@ -82,7 +82,6 @@
 	function handleSubmit(e) {
 		if (date instanceof Date) {
 			const reminderDate = new Date(`${date.toDateString()} ${time}`);
-			console.log(reminderDate);
 		}
 	}
 
