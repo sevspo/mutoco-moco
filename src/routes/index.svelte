@@ -1,6 +1,12 @@
 <script lang="ts">
-	import { DatePicker, DatePickerInput } from 'carbon-components-svelte/src/DatePicker';
-	import { TimePicker, TimePickerSelect } from 'carbon-components-svelte/src/TimePicker';
+	import {
+		DatePicker,
+		DatePickerInput
+	} from 'carbon-components-svelte/src/DatePicker';
+	import {
+		TimePicker,
+		TimePickerSelect
+	} from 'carbon-components-svelte/src/TimePicker';
 	import { SelectItem } from 'carbon-components-svelte/src/Select';
 
 	// import { DatePicker } from 'attractions';
@@ -11,6 +17,10 @@
 
 	const minDate = new Date();
 	const maxDate = eventDate;
+
+	const emailPattern = RegExp(
+		/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+	);
 
 	const daysUntilEvent = Math.floor(
 		(eventDate.getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24)
@@ -23,6 +33,8 @@
 	let hasTimeError: boolean = false;
 
 	let time = '12:00';
+
+	let email: string = '';
 
 	let reminderDays: number = 0;
 
@@ -52,7 +64,8 @@
 
 	function updateDaysUntilEvent(e: CustomEvent<any>) {
 		reminderDays = Math.floor(
-			(e.detail.selectedDates[0].getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24)
+			(e.detail.selectedDates[0].getTime() - new Date().getTime()) /
+				(1000 * 60 * 60 * 24)
 		);
 	}
 
@@ -102,6 +115,7 @@
 
 <form on:submit|preventDefault={handleSubmit}>
 	<DatePicker
+		aria-label="Date picker"
 		on:change={updateDaysUntilEvent}
 		datePickerType="single"
 		bind:value={date}
@@ -114,6 +128,7 @@
 	</DatePicker>
 
 	<TimePicker
+		aria-label="Time picker"
 		bind:value={time}
 		placeholder="hh:mm"
 		maxlength="5"
@@ -158,7 +173,18 @@
 		</button>
 	</div>
 
-	<button class="button" type="submit" disabled={isFormValid}>Submit</button>
+	<input
+		aria-label="email"
+		type="email"
+		bind:value={email}
+		maxlength="50"
+		required
+		placeholder="Enter your email"
+	/>
+
+	<button aria-label="sumit" class="button" type="submit" disabled={isFormValid}
+		>Submit</button
+	>
 </form>
 
 <style lang="scss">
