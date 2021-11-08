@@ -352,7 +352,7 @@
 			align-items: center;
 			background-color: $input-bg-color;
 			gap: $whitespace-l;
-			height: $input-height;
+			height: var(--input-height);
 			padding: 0 $whitespace-s;
 			border-radius: $border-radius;
 			font-size: $input-font-size;
@@ -410,7 +410,7 @@
 
 		.email-input {
 			width: 100%;
-			height: $input-height;
+			height: var(--input-height);
 			background-color: $input-bg-color;
 			border-radius: $border-radius;
 			border: transparent;
@@ -426,7 +426,7 @@
 		.submit-button {
 			margin-bottom: $whitespace-m;
 			width: 100%;
-			height: $input-height;
+			height: var(--input-height);
 			background-color: $color-primary;
 			border-radius: $border-radius;
 			font-size: $input-font-size;
