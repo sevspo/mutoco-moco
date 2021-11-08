@@ -42,4 +42,13 @@ img {
 .main-container {
 	max-width: $main-container-max;
 	margin: 0 auto;
+	padding: 0 20px;
+}
+
+@media (max-width: $breakpoint-m) {
+	.bx--date-picker,
+	.bx--time-picker,
+	.bx--time-picker__input {
+		width: 100%;
+	}
 }

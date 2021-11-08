@@ -217,10 +217,36 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		gap: $whitespace-xxl;
+		gap: clamp(80px, 6vw, 130px);
+	}
 
-		> * {
-			flex: 1;
+	.content-left {
+		flex: 2;
+	}
+
+	.content-right {
+		flex: 1.5;
+
+		.event-img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			border-radius: $border-radius;
+		}
+	}
+
+	@media (max-width: $breakpoint-m) {
+		.content-left,
+		.content-right {
+			flex: 1 1 100%;
+		}
+
+		.content-left {
+			order: 2;
+		}
+
+		.content-right {
+			order: 1;
 		}
 	}
 
@@ -247,6 +273,7 @@
 
 			.badge-text {
 				font-size: 14px;
+				white-space: nowrap;
 			}
 		}
 	}
@@ -278,21 +305,6 @@
 		}
 	}
 
-	.content-left {
-		flex: 2;
-	}
-
-	.content-right {
-		flex: 1.5;
-
-		.event-img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			border-radius: $border-radius;
-		}
-	}
-
 	.separator {
 		width: 100%;
 		height: 1px;
@@ -309,8 +321,17 @@
 
 		.date-inputs {
 			display: flex;
+			flex-wrap: wrap;
 			gap: $whitespace-s;
 			margin-bottom: $whitespace-s;
+		}
+
+		@media (max-width: $breakpoint-m) {
+			.date-inputs {
+				> * {
+					flex: 1 1 100%;
+				}
+			}
 		}
 
 		.counter {
@@ -366,6 +387,11 @@
 
 			.counter-viewport {
 				min-width: 100px;
+				text-align: center;
+
+				@media (max-width: $breakpoint-m) {
+					width: 100%;
+				}
 			}
 		}
 
@@ -385,6 +411,7 @@
 		}
 
 		.submit-button {
+			margin-bottom: $whitespace-m;
 			width: 100%;
 			height: $input-height;
 			background-color: $color-primary;
