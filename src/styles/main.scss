@@ -2,9 +2,44 @@
 
 body {
 	font-family: $font-family;
+	line-height: $line-height;
+	color: $color-text;
 }
+
+div {
+	font-size: 18px;
+}
+
+img {
+	max-width: 100%;
+}
+
+// input {
+// 	height: $input-height;
+// }
 
 .bx--date-picker__input,
 .bx--time-picker__input-field {
 	font-family: $font-family;
+	font-size: $input-font-size;
+	border-radius: $border-radius;
+	height: $input-height;
+	background-color: $input-bg-color;
+}
+
+.bx--date-picker.bx--date-picker--single .bx--date-picker__input,
+.bx--date-picker-container {
+	width: 100%;
+	border-bottom: 0;
+}
+
+.bx--time-picker__input-field {
+	width: 100%;
+	text-align: center;
+	border-bottom: 0;
+}
+
+.main-container {
+	max-width: $main-container-max;
+	margin: 0 auto;
 }

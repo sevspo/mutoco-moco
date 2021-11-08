@@ -1,19 +1,22 @@
 $border-radius: 5px;
-$primary-color: #6800ed;
+$color-primary: #6800ed;
+$color-secondary: #0f62fe;
 $sub-color: #888888;
 $input-bg-color: #f1f2f6;
 $separtor-color: #e1e1e1;
 $color-text: #000000;
+$color-white: #ffffff;
 $font-family: Helvetica, Arial, sans-serif;
 $line-height: 1.4;
 
 $input-font-size: 20px;
 
-$white-space-xxl: 130px;
-$white-space-xl: 90px;
-$white-space-l: 60px;
-$white-space-m: 30px;
-$white-space-s: 20px;
+$whitespace-xxl: 130px;
+$whitespace-xl: 90px;
+$whitespace-l: 60px;
+$whitespace-m: 30px;
+$whitespace-s: 20px;
+$whitespace-xs: 10px;
 
 $breakpoint-l: 1200px;
 $breakpoint-m: 768px;
@@ -21,4 +24,4 @@ $breakpoint-s: 420px;
 
 $input-height: 80px;
 
-$main-container-max: 1400px;
+$main-container-max: 886px;

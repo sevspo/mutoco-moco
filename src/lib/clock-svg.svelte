@@ -21,3 +21,9 @@
 		stroke-linejoin="round"
 	/>
 </svg>
+
+<style lang="scss">
+	svg {
+		display: block;
+	}
+</style>
