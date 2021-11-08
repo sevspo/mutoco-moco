@@ -116,10 +116,11 @@
 		</div>
 		<div class="content content-right">
 			<img
-				srcset="../static/event-pic-mobile.jpg 580w, 
-								../static/event-pic-desktop.jpg 800w"
-				sizes="(max-width: 420px) 420px"
-				src="../static/event-pic-desktop.jpg"
+				srcset="/event-pic-mobile.jpg 580w, 
+								/event-pic-desktop.jpg 800w"
+				sizes="(max-width: 420px) 400px
+							 (min-width: 421px) 768px"
+				src="/event-pic-desktop.jpg"
 				alt="party-pic"
 				class="event-img"
 			/>
@@ -206,8 +207,12 @@
 				placeholder="Enter your email"
 			/>
 
-			<button aria-label="sumit" class="submit-button" type="submit" disabled={isFormInvalid}
-				>Submit</button
+			<button
+				aria-label="sumit"
+				class="submit-button"
+				type="submit"
+				disabled={isFormInvalid}
+				enterkeyhint="done">Submit</button
 			>
 		</form>
 	</section>
