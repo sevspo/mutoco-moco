@@ -162,16 +162,18 @@
 				</div>
 
 				<div class="counter">
-					<button
-						disabled={reminderDays <= 0}
-						type="button"
-						on:click={decreaseReminderDays}
-						aria-label="Decrease the counter by one"
-					>
-						<svg aria-hidden="true" viewBox="0 0 1 1">
-							<path d="M0,0.5 L1,0.5" />
-						</svg>
-					</button>
+					<div class="button-wrapper">
+						<button
+							disabled={reminderDays <= 0}
+							type="button"
+							on:click={decreaseReminderDays}
+							aria-label="Decrease the counter by one"
+						>
+							<svg aria-hidden="true" viewBox="0 0 1 1">
+								<path d="M0,0.5 L1,0.5" />
+							</svg>
+						</button>
+					</div>
 
 					<div class="counter-viewport">
 						<div class="counter-digits">
@@ -179,16 +181,18 @@
 						</div>
 					</div>
 
-					<button
-						disabled={reminderDays >= daysUntilEvent}
-						type="button"
-						on:click={increaseReminderDays}
-						aria-label="Increase the counter by one"
-					>
-						<svg aria-hidden="true" viewBox="0 0 1 1">
-							<path d="M0,0.5 L1,0.5 M0.5,0 L0.5,1" />
-						</svg>
-					</button>
+					<div class="button-wrapper">
+						<button
+							disabled={reminderDays >= daysUntilEvent}
+							type="button"
+							on:click={increaseReminderDays}
+							aria-label="Increase the counter by one"
+						>
+							<svg aria-hidden="true" viewBox="0 0 1 1">
+								<path d="M0,0.5 L1,0.5 M0.5,0 L0.5,1" />
+							</svg>
+						</button>
+					</div>
 				</div>
 			</div>
 
@@ -302,6 +306,10 @@
 		.event-date {
 			font-size: 25px;
 			font-weight: bold;
+
+			@media (max-width: $breakpoint-m) {
+				font-size: 20px;
+			}
 		}
 	}
 
@@ -418,6 +426,14 @@
 			border-radius: $border-radius;
 			font-size: $input-font-size;
 			color: $color-white;
+			border: none;
+
+			&:disabled {
+				// opacity: 0.5;
+				background-color: $input-bg-color;
+				cursor: not-allowed;
+				color: $color-text;
+			}
 		}
 	}
 
